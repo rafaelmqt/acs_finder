@@ -1,33 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Cadastro de acs</title>
-    <center>
-    <Head>
-          <body style:background-color:linear-gradient(to bottom, #d9ecf7, #3cb96;/>
-    <img src="projet_logo.jpg" alt="logo"/><br> 
-    <br>
-    <br>
-        Cadastro de Agente Comunitario de Saude<br>
-       <label>Nome</label>
-       <input type="text"/><br>
-       <label>CNS/CPF</label>
-       <input type="text"/><br>
-        <label>Lotacao</label>
-       <input type="text"/><br>
-        <label>Categoria profissional</label>
-       <input type="text"/><br>
-        <label>usuario</label>
-       <input type="text"/><br>
-        <label>Senha</label>
-       <input type="text"/><br>
-     <button class="Confirmar">Clique aqui</button>
-     <button>
-      <div style="background-color: green;"Confirmar></div>
-    <a href="pagina_inicial.html"><button>SAIR</button></a>
-     <button>Confirmar</button>
-
-    </bory>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Agente Comunitário de Saúde</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #d9ecf7, #3cb96);
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input {
+      margin: 5px;
+      padding: 8px;
+      width: 80%;
+      max-width: 300px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <img src="projet_logo.jpg" alt="Logo do Projeto">
+  <h1>Cadastro de Agente Comunitário de Saúde</h1>
+  <form action="pagina_inicial.html" method="post">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+    <label for="cns_cpf">CNS/CPF:</label>
+    <input type="text" id="cns_cpf" name="cns_cpf" required>
+    <label for="lotacao">Lotação:</label>
+    <input type="text" id="lotacao" name="lotacao" required>
+    <label for="categoria">Categoria Profissional:</label>
+    <input type="text" id="categoria" name="categoria" required>
+    <label for="usuario">Usuário:</label>
+    <input type="text" id="usuario" name="usuario" required>
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" required>
+    <button type="submit">Confirmar</button>
+  </form>
+  <a href="pagina_inicial.html"><button>SAIR</button></a>
+</body>
 </html>
