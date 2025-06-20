@@ -1,12 +1,19 @@
+            
+            *{box-sizing: border-box;
+          }
             body{
                color:#272727;   
                margin: 0;
-               font-family: Arial, sans-serif;
-               background: linear-gradient(botton, #d9ecf7, #2f42ee);
+               font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+               justify-content: center;
+               align-items: center;
                text-align: center;
-               padding: 20px;
-               background-color:#4ad;
+               padding: 1px;
+               background: linear-gradient(to bottom, #cce7ff, #004080);
                font-size: 20px;;
+               height: 100vh;
+               animation: gradient 15s ease infinite;
+               background: linear-gradient(315deg, rgb(31, 29, 46) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgb(102, 101, 185) 98%);
             }
              a{    
                   margin: 0;
@@ -72,5 +79,11 @@
 
 .buttonClass:hover {
 
+}
+.parent{
+     background-color: #cac0aa;
+     display:grid;
+     grid-template-rows: auto 1fr auto;
+    border: ;
 }
               
