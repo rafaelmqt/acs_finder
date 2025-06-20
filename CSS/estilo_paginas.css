@@ -1,47 +1,53 @@
             
-            *{box-sizing: border-box;
+           
+             *{box-sizing: border-box;
           }
             body{
                color:#272727;   
                margin: 0;
-               font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+               font-family: Arial, Helvetica, sans-serif, sans-serif;
                justify-content: center;
                align-items: center;
                text-align: center;
                padding: 1px;
                background: linear-gradient(to bottom, #cce7ff, #004080);
-               font-size: 20px;;
+               font-size: 19px;;
                height: 100vh;
-               animation: gradient 15s ease infinite;
+               animation: forwards 15s ease infinite;
                background: linear-gradient(315deg, rgb(31, 29, 46) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgb(102, 101, 185) 98%);
             }
              a{    
-                  margin: 0;
-                  padding: 15px 20px;
-                  font-family: Arial, Helvetica, sans-serif;
+                  margin: 100;
+                  padding: 100px 50px;
+                  font-family:Arial, Helvetica, sans-serif, sans-serif;
                   text-decoration: none;
                   color: #060af1;
-                  text-size-adjust: none;
+                  text-size-adjust: ;
                   font-size: 14px;
                   border-radius: 20px;            
              }
              button{
-                  margin: 0;
-                  padding: 5px 10px;
+                  width: 100%;
+                  padding: 20px 10px;
+                  background: linear-gradient(45deg, #337ab7, #002147);
+                  color: #fff;
+                  border: none;
+                  border-radius: 4px;
+                  cursor: pointer;
                   font-family: Arial, Helvetica, sans-serif;
                   color:#ffffff;
                   border-color:#124d77;
-                  border-top-left-radius:14px;
-                  border-top-right-radius:14px;
-                  border-bottom-left-radius:14px;
-                  border-bottom-right-radius:14px;
+                  border-top-left-radius:15px;
+                  border: top right radius 15px;
+                  border: bottom left radius 15px;
+                  border-bottom-right-radius:15px;
                   box-shadow:inset 1px 0px 32px -9px #54a3f7;
                   text-shadow:inset -21px -7px 7px #154682;
                   background:linear-gradient(#007dc1, rgba(20, 44, 61, 1));
                   font-size:18px;
                   font-family:Arial;
                   width:200px;
-                  height:40px;
+                  height:60px;
                   border-width:1px;
              }
   
@@ -52,38 +58,37 @@
                   background-color: #0000ff;
                   font-size-adjust: 14px;;
                   background: linear-gradient(rgba(20, 44, 61, 1), #007dc1);
-                  font-size:20px;
+                  font-size:14px;
             }    
 
              input{
                   caret-color:rgb(22, 19, 206);
                   padding: 5px 25px;
                   margin: 4px;
-                  font-family: Arial, Helvetica, sans-serif;
+                  font-family:'Courier New', Courier, monospace,sans-serif;
                   background-color: #0000ff;
                   font-size-adjust: 20px;;
                   background: rgb(255, 255, 255);
-                  font-size:20px;
+                  font-size:14px;
                   border-radius: 10px;
              }
              img{ 
-                  margin:50;
-                  padding:30;
-                  border: 0px; 1px; 1x;
-                  border-radius:30px;
+                  margin:500;
+                  padding:300;
+                  border: 2px; 1px; 1px;                  border-radius:30px;
              }
              
              div {
-  
+   background-color: #cac0aa;
 }
 
-.buttonClass:hover {
 
-}
 .parent{
-     background-color: #cac0aa;
-     display:grid;
-     grid-template-rows: auto 1fr auto;
-    border: ;
+    background-color: #cac0aa;
+    display:grid;
+    grid-template-rows: auto fr auto;
+    border: 1px;;
+    font-family: 'Courier New', Courier, monospace;
+    padding: none;
 }
               
