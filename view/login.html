@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-      <meta charset='utf-8'>
-      <meta http-equiv='X-UA-Compatible' 
-      content='IE=edge'>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="author" content="Carlos Henrique Sousa Silva">
-      <title>LOGIN</title>
-      <link rel="stylesheet" href="../CSS/estilo_paginas.css">
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Carlos Henrique Sousa Silva">
+  <title>Login</title>
+  <!--bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="../CSS/estilo_paginas.css">
+  <!--javascript-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
 </head>
+<!--corpo da pagina-->
+
 <body>
-<br>
-    <img src="../imagens/projet_logo.jpg" alt="logo" height="120" width="180">
-      <br><h3>Login</h3> 
-      <label for="CNS ou CPF">CNS ou CPF:</label>
-      <input type="text" id="CNS ou CPF" name="CNS ou CPF"><br>
-      <label for="Senha">Senha:</label>
-      <input type="text" id="Senha" name="Senha">
-        <br><br> 
-      <a href="seu_perfil.html"><button>confirmar</button></a>
-      <a href="pagina_inicial.html"><button>sair</button></a>
-      <br>  <br>
-      <a href="recuperar_senha.html"><style font-size="7px"></style>Esqueci minha senha</a>
+  <br>
+  <img src="../imagens/projet_logo.jpg" alt="logo" height="120" width="180" class="img-thumbnail" class="img-fluid">
+  <br><br>
+  <form class="container">
+    <h3 style="color: rgb(6, 6, 104);">Login</h3><br>
+    CNS ou CPF:<input placeholder="digige seu CPF ou CNS" class="form-control">
+    Senha:<input placeholder="digige sua Senha" class="form-control">
+    <p class="text-center-small">Lembre-se de mim <input  type="checkbox" class="form-check-box"></p>
+  </form>
+  <br>
+  <form>
+    <a href="seu_perfil.html" class="btn btn-primary btn-sm" style="margin-right: 15px">confirmar</a>
+    <a href="pagina_inicial.html" class="btn btn-primary btn-sm">sair</a>
+  </form>
+
+  <a href="recuperar_senha.html" class="text-center-small" style="font-size: 12px;">Esqueci minha senha</a>
+  <script> src = "JS_Projeto.js" ></script>
 </body>
 
 </html>
