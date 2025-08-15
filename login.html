@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Login - ACS</title>
+<style>
+  body {font-family: Arial, sans-serif;background: linear-gradient(to bottom, #cce7ff, #004080);display: flex;justify-content: center;align-items: center;height: 100vh;margin: 0;}
+  .container {background: white;padding: 2rem;border-radius: 12px;box-shadow: 0 4px 12px rgba(0,0,0,0.2);width: 100%;max-width: 350px;text-align: center;}
+  input {width: 100%;padding: 0.6rem;margin-bottom: 1rem;border: 1px solid #ccc;border-radius: 4px;}
+  button {width: 100%;padding: 0.8rem;background: #004080;color: white;border: none;border-radius: 4px;font-weight: bold;cursor: pointer;}
+  button:hover {background: #003366;}
+  a {display: block;margin-top: 1rem;color: #004080;text-decoration: none;}
+  a:hover {text-decoration: underline;}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Login - ACS</h1>
+    <input type="email" placeholder="E-mail" required>
+    <input type="password" placeholder="Senha" required>
+    <button onclick="window.location.href='pacientes.html'">Entrar</button>
+    <a href="cadastro.html">Criar conta</a>
+    <a href="recuperar.html">Esqueci minha senha</a>
+  </div>
+</body>
+</html>
