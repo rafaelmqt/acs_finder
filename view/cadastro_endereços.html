@@ -1,38 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-      <meta charset='utf-8'>
-      <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-      <lang Portugues></lang>
-        <title>Cadastros de Endereços</title>
-        <!--bootstrap-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cadastro de Endereços</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../CSS/estilo_paginas.css">
-  <!--javascript-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-    crossorigin="anonymous"></script>
-    </head>
-      <body>
-        <h2><img src="../imagens/projet_logo.jpg" alt="logo" height="120" width="180"></h2>
-            <br>
-             <h2>Cadastre um endereço!</h2>
-Rua: <input type="text" placeholder="Digite o nome da rua"></input><br> 
-Numero: <input type="text" placeholder="Digite o número"></input> CEP: <input type="text" placeholder="Digite o CEP"></input>
-            <br>
-Bairro: <input type="text" placeholder="Digite o nome do bairro"></input>Cidade:<input type="text" placeholder="Digite o nome da cidade"></input>
-            <br>
-<h2>Dados do Posto de Saúde</h2>
-Posto de Saúde: <input type="text" placeholder="Digite o nome do posto de saúde"></input><br>
-Telefone do Posto: <input type="text" placeholder="Digite o telefone do posto"></input><br>
-Endereço: <input type="text" placeholder="Digite o endereço do posto"></input><br>
-            <br>
-           
-<a href="Enderecos_Cadastrados.html"><button class="btn-3d"><i class="icon-hand-o-right"></i>Salvar</button></a>
-<a href="pagina_inicial.html"><button class="btn-3d"><i class="icon-hand-o-right"></i>Página Inicial</button></a>
+</head>
+<body class="container mt-4" style="max-width: 800px;">
 
-            <br>
+  <h2><img src="../imagens/projet_logo.jpg" alt="logo" height="120" width="180"></h2>
+  <h2>Cadastrar Endereços</h2>
 
-    </body>
+  <form id="formCadastro">
+    <input type="hidden" id="idEdicao">
+
+    
+      <label for="rua" class="form-label">Rua:</label>
+      <input type="text" id="rua" class="form-control" required>
+   
+
+    
+      <label for="numero" class="form-label">Nº:</label>
+      <input type="text" id="numero" class="form-control" required>
+   
+
+    
+      <label for="cep" class="form-label">CEP:</label>
+      <input type="text" id="cep" class="form-control" required>
+    
+
+    
+      <label for="bairro" class="form-label">Bairro:</label>
+      <input type="text" id="bairro" class="form-control" required>
+    
+
+    
+      <label for="posto" class="form-label">Posto:</label>
+      <input type="text" id="posto" class="form-control" required>
+    
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a href="pagina_inicial.html" class="btn btn-secondary">Página Inicial</a>
+  </form>
+
+  <table class="table table-bordered" id="tabelaItens">
+    <thead class="table-light">
+      <tr>
+        <th>Rua</th>
+        <th>Nº</th>
+        <th>CEP</th>
+        <th>Bairro</th>
+        <th>Posto</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    let itens = [];
+    let idAtual = 1;
+
+    const form = document.getElementById("formCadastro");
+    const idEdicao = document.getElementById("idEdicao");
+
+    const ruaInput = document.getElementById("rua");
+    const numeroInput = document.getElementById("numero");
+    const cepInput = document.getElementById("cep");
+    const bairroInput = document.getElementById("bairro");
+    const postoInput = document.getElementById("posto");
+
+    const tabela = document.querySelector("#tabelaItens tbody");
+
+    function atualizarTabela() {
+      tabela.innerHTML = "";
+      itens.forEach(item => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${item.rua}</td>
+          <td>${item.numero}</td>
+          <td>${item.cep}</td>
+          <td>${item.bairro}</td>
+          <td>${item.posto}</td>
+          <td>
+            <button class="btn btn-sm btn-warning" onclick="editarItem(${item.id})">Editar</button>
+            <button class="btn btn-sm btn-danger" onclick="apagarItem(${item.id})">Apagar</button>
+          </td>
+        `;
+        tabela.appendChild(tr);
+      });
+    }
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+
+      const novoItem = {
+        rua: ruaInput.value,
+        numero: numeroInput.value,
+        cep: cepInput.value,
+        bairro: bairroInput.value,
+        posto: postoInput.value
+      };
+
+      if (idEdicao.value) {
+        const item = itens.find(i => i.id == idEdicao.value);
+        Object.assign(item, novoItem);
+        idEdicao.value = "";
+      } else {
+        itens.push({ id: idAtual++, ...novoItem });
+      }
+
+      form.reset();
+      atualizarTabela();
+    });
+
+    window.editarItem = function(id) {
+      const item = itens.find(i => i.id == id);
+      ruaInput.value = item.rua;
+      numeroInput.value = item.numero;
+      cepInput.value = item.cep;
+      bairroInput.value = item.bairro;
+      postoInput.value = item.posto;
+      idEdicao.value = item.id;
+    }
+
+    window.apagarItem = function(id) {
+      if (confirm("Tem certeza que deseja apagar este item?")) {
+        itens = itens.filter(i => i.id != id);
+        atualizarTabela();
+      }
+    }
+  </script>
+
+</body>
 </html>
