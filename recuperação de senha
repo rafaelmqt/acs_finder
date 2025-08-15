@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Recuperar Senha - ACS</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #cce7ff, #004080);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 1rem;
+  }
+  .container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  input {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  button {
+    width: 100%;
+    padding: 0.8rem;
+    background: #004080;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #003366;
+  }
+  a {
+    display: block;
+    margin-top: 1rem;
+    color: #004080;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Recuperar Senha</h1>
+    <input type="email" id="email" placeholder="Digite seu e-mail" required>
+    <button onclick="recuperar()">Enviar</button>
+    <div id="mensagem" style="margin-top:1rem;"></div>
+    <a href="login.html">Voltar ao login</a>
+  </div>
+
+<script>
+function recuperar() {
+  const email = document.getElementById('email').value.trim();
+  const mensagem = document.getElementById('mensagem');
+  if (email) {
+    mensagem.style.color = 'green';
+    mensagem.textContent = 'Se este e-mail estiver cadastrado, enviaremos um link de recuperação.';
+  } else {
+    mensagem.style.color = 'red';
+    mensagem.textContent = 'Digite um e-mail válido.';
+  }
+}
+</script>
+</body>
+</html>
